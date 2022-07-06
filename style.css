@@ -1,0 +1,55 @@
+body{
+    margin: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 100vh;
+}
+
+.floor{
+    display: flex;
+}
+
+.card{
+    width: 150px;
+    height: 180px;
+    perspective: 300px;
+    margin: 10px;
+    transform-style:  preserve-3d;
+    transition: 1s
+}
+
+.card .item{
+    font-size: x-large;
+    font-weight: bolder;
+    font-family: 'Arima', cursive;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    backface-visibility: hidden;
+
+    width:100%;
+    height:100%;
+
+    background: linear-gradient(50deg, #00FE73 10.99%, #00FE74 11.34%, #00F8BE 48.32%, #00F4ED 74.77%, #00F2FF 87.96%);
+    position: absolute;
+}
+
+.card .front.item{
+    transform: rotateY(0deg)
+}
+
+.card .back.item{
+    transform: rotateY(-180deg)
+}
+
+.flipped{
+    transform: rotateY(180deg);
+}
+
+

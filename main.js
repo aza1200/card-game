@@ -9,20 +9,23 @@ Array.from(document.getElementsByClassName("card")).forEach(
     }
 );
 
-const idArray = ["1","2","3","4","5","6","7","8","9","10","11","12"]
-
-for(var i =0 ; i<6 ; i++) {
-    fetch("https://api.thecatapi.com/v1/images/search")
-        .then((response) => response.json())
-        .then((data) => {
-            let imageUrl = data[0].url
-            idArray.sort(()=> Math.random()-0.5)
-        })
+function loadUrls() {
+    const imageUrls = []
+    for (var i = 0; i < 6; i++) {
+        fetch("https://api.thecatapi.com/v1/images/search")
+            .then((response) => response.json())
+            .then((data) => {
+                imageUrls.push(data[0].url)
+            })
+    }
+    return imageUrls
 }
 
-function shuffleAndDeleteArray(){
-
+async function main(){
+    const imageUrls = await loadUrls()
+    console.log(imageUrls)
 }
+main()
 
 // async function getImageUrl() {
 //     let response = await fetch("https://api.thecatapi.com/v1/images/search")

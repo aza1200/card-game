@@ -20,7 +20,7 @@ body{
 
 .card{
     transform-style:  preserve-3d;
-    transition: 1s
+    transition: 1s;
 }
 
 .card .item{
@@ -44,6 +44,13 @@ body{
 
 .card .back{
     transform: rotateY(-180deg)
+}
+
+.card .back img{
+    max-width: 100%;
+    width: 150px;
+    height: 180px;
+    border-radius: 10px;
 }
 
 .flipped{
